@@ -50,7 +50,16 @@ class App extends React.Component {
     }
 
     filterTodo = array => {
-       
+       this.setState({
+        todos: array.map((filtered) => {
+            if (filtered.completed === true) {
+              return {...!filtered}
+            }    
+       return filtered
+        })
+       })
+
+
     }
 
   render() {
